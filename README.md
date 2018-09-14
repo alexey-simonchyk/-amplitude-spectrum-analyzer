@@ -1,14 +1,18 @@
-Отображает график с амплитудным спекторм текущего звука.
+## Отображатор графика с амплитудным спектром текущего звука.
 
-Необходимо:
-Установленный python3, pip и virualenv
+**Необходимо**
+- python3
+- pip
+- virualenv
 
-Run on Ubuntu:
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 main.py
+**Run on Ubuntu**
+```
+  virtualenv venv
+  source venv/bin/activate
+  pip install -r requirements.txt
+  python3 main.py
+```
 
-После запуска:
-В PulseAudio перейти на вкладку 'Recording' и выставить для приложения
-Monitot of Built-in Audio Analog Stereo (или что-нибудь такое)
+***После запуска***
+- в PulseAudio перейти на вкладку 'Recording' 
+- выставить для приложения Monitot of Built-in Audio Analog Stereo (или что-нибудь такое)
