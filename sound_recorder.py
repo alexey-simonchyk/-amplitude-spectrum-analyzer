@@ -2,6 +2,7 @@ import sounddevice as sd
 from queue import Queue
 import numpy as np
 import util
+import time
 
 CHUNK = 2048
 
@@ -23,7 +24,7 @@ def live_amplitude_spectrum():
     with sd.InputStream(samplerate=SAMPLE_RATE, channels=CHANNELS, blocksize=CHUNK,
                         dtype="Int16", callback=record_callback):
 
-        util.live_spectrum_plot(data_queue=sound_data_queue, chunk=CHUNK, redraw_interval=1)
+        util.live_spectrum_plot(data_queue=sound_data_queue, chunk=CHUNK, redraw_interval=5)
 
 
 def record(record_seconds=DEFAULT_RECORD_SECONDS):
@@ -36,6 +37,7 @@ def record(record_seconds=DEFAULT_RECORD_SECONDS):
                         blocksize=CHUNK, dtype="Int16", callback=record_callback):
 
         while recorded_data.qsize() < (SAMPLE_RATE / CHUNK * record_seconds):
+            time.sleep(20)            
             pass
 
     recorded_sound = np.array([recorded_data.get() for _ in range(recorded_data.qsize())])
