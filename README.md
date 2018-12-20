@@ -11,4 +11,4 @@ python3 main.py
 
 После запуска:
 В PulseAudio перейти на вкладку 'Recording' и выставить для приложения
-Monitot of Built-in Audio Analog Stereo (или что-нибудь такое)
+Monitor of Built-in Audio Analog Stereo (или что-нибудь такое)
